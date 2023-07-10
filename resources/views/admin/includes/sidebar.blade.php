@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item mt-3">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.tags.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-tags"></i>
                     <p>Теги</p>
                 </a>
