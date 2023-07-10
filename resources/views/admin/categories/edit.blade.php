@@ -23,8 +23,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-4">
-                        <form action="#" method="post">
+                        <form action="{{ route('admin.categories.update', $category['id']) }}" method="post">
                             @csrf
+                            @method('PATCH')
                             <div class="form-group">
                                 <label for="inputText">Название</label>
                                 <input type="text" name="title" value="{{ $category['title'] }}" class="form-control" id="inputText" aria-describedby="textHelp" placeholder="Введите название категории">
