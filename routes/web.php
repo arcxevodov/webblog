@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
-    Route::get('/', 'IndexController');
+    Route::get('/', 'IndexController')->name('homepage');
 });
 
 Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
