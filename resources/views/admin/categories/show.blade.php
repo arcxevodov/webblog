@@ -28,9 +28,13 @@
                         </a>
                     </div>
                     <div class="col-1">
-                        <a class="btn btn-block btn-primary" href="#">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
+                        <form class="d-inline" action="{{ route('admin.categories.delete', $category['id']) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-block btn-primary">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <div class="row">

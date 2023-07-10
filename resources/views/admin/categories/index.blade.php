@@ -30,32 +30,42 @@
                 </div>
                 <div class="row">
                     <div class="col-5 my-4">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Название</th>
-                                <th scope="col">Создано</th>
-                                <th scope="col">Изменено</th>
-                                <th scope="col">Действия</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($categories as $category)
+                        @if($categories->count() != 0)
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td>{{ $category['id'] }}</td>
-                                    <td>{{ $category['title'] }}</td>
-                                    <td>{{ date('d.m.Y H:i', strtotime($category['created_at'])) }}</td>
-                                    <td>{{ date('d.m.Y H:i', strtotime($category['updated_at'])) }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.categories.show', $category['id']) }}"><i class="far fa-eye mx-1"></i></a>
-                                        <a href="{{ route('admin.categories.edit', $category['id']) }}"><i class="far fa-edit mx-1"></i></a>
-                                        <a href="#"><i class="fas fa-trash-alt mx-1"></i></a>
-                                    </td>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Название</th>
+                                    <th scope="col">Создано</th>
+                                    <th scope="col">Изменено</th>
+                                    <th scope="col">Действия</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                @foreach($categories as $category)
+                                    <tr>
+                                        <td>{{ $category['id'] }}</td>
+                                        <td>{{ $category['title'] }}</td>
+                                        <td>{{ date('d.m.Y H:i', strtotime($category['created_at'])) }}</td>
+                                        <td>{{ date('d.m.Y H:i', strtotime($category['updated_at'])) }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.categories.show', $category['id']) }}"><i class="far fa-eye mx-1"></i></a>
+                                            <a href="{{ route('admin.categories.edit', $category['id']) }}"><i class="far fa-edit text-cyan mx-1"></i></a>
+                                            <form class="d-inline" action="{{ route('admin.categories.delete', $category['id']) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent">
+                                                    <i class="fas fa-trash-alt text-danger"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        @else
+                            <p>Категории отсутствуют.</p>
+                        @endif
                     </div>
                 </div>
             </div>
