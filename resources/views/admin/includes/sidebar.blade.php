@@ -2,7 +2,7 @@
     <div class="sidebar">
         <ul class="nav nav-pills nav-sidebar flex-column my-3">
             <li class="nav-item">
-                <a href="{{ route('homepage') }}" class="nav-link">
+                <a href="{{ route('main.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-backward text-white-50"></i>
                     <p class="text-white-50">К сайту</p>
                 </a>
@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('categories') }}" class="nav-link">
+                <a href="{{ route('admin.categories.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-th-list"></i>
                     <p>Категории</p>
                 </a>

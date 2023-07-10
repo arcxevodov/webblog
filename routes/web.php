@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
-    Route::get('/', 'IndexController')->name('homepage');
+    Route::get('/', 'IndexController')->name('main.index');
 });
 
 Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Main'], function () {
-        Route::get('/', 'IndexController')->name('admin');
+        Route::get('/', 'IndexController')->name('admin.main.index');
     });
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
-        Route::get('/', 'IndexController')->name('categories');
+        Route::get('/', 'IndexController')->name('admin.categories.index');
     });
 });
 
