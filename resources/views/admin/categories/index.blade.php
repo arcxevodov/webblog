@@ -10,7 +10,8 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Панель управления</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Панель управления</a>
+                            </li>
                             <li class="breadcrumb-item active">Категории</li>
                         </ol>
                     </div>
@@ -26,8 +27,35 @@
                             <i class="fas fa-plus"></i>
                         </a>
                     </div>
-                    <div class="col-12">
-                        {{-- TODO: Вывод категорий --}}
+                </div>
+                <div class="row">
+                    <div class="col-5 my-4">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Название</th>
+                                <th scope="col">Создано</th>
+                                <th scope="col">Изменено</th>
+                                <th scope="col">Действия</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($categories as $category)
+                                <tr>
+                                    <td>{{ $category['id'] }}</td>
+                                    <td>{{ $category['title'] }}</td>
+                                    <td>{{ date('d.m.Y H:i', strtotime($category['created_at'])) }}</td>
+                                    <td>{{ date('d.m.Y H:i', strtotime($category['updated_at'])) }}</td>
+                                    <td>
+                                        <a href="#"><i class="far fa-eye mx-1"></i></a>
+                                        <a href="#"><i class="far fa-edit mx-1"></i></a>
+                                        <a href="#"><i class="fas fa-trash-alt mx-1"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
