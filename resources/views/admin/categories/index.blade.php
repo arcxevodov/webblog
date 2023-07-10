@@ -49,7 +49,7 @@
                                     <td>{{ date('d.m.Y H:i', strtotime($category['updated_at'])) }}</td>
                                     <td>
                                         <a href="{{ route('admin.categories.show', $category['id']) }}"><i class="far fa-eye mx-1"></i></a>
-                                        <a href="#"><i class="far fa-edit mx-1"></i></a>
+                                        <a href="{{ route('admin.categories.edit', $category['id']) }}"><i class="far fa-edit mx-1"></i></a>
                                         <a href="#"><i class="fas fa-trash-alt mx-1"></i></a>
                                     </td>
                                 </tr>
