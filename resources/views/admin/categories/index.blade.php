@@ -21,8 +21,13 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
+                    <div class="col-1">
+                        <a href="#" class="btn btn-block btn-primary">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </div>
                     <div class="col-12">
-                        Категории
+                        {{-- TODO: Вывод категорий --}}
                     </div>
                 </div>
             </div>
