@@ -22,6 +22,18 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
+                    <div class="col-1">
+                        <a class="btn btn-block btn-primary" href="{{ route('admin.categories.edit', $category['id']) }}">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </div>
+                    <div class="col-1">
+                        <a class="btn btn-block btn-primary" href="#">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-5 my-4">
                         <table class="table">
                             <tbody>
