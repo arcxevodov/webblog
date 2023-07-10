@@ -23,10 +23,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-4">
-                        <form action="#" method="post">
+                        <form action="{{ route('admin.categories.store') }}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <label for="inputText">Название</label>
-                                <input type="text" class="form-control" id="inputText" aria-describedby="textHelp" placeholder="Введите название категории">
+                                <input type="text" name="title" class="form-control" id="inputText" aria-describedby="textHelp" placeholder="Введите название категории">
+                                @error('title')
+                                    <small id="textHelp" class="form-text text-danger">Это поле необходимо для заполнения.</small>
+                                @enderror
                                 <small id="textHelp" class="form-text text-muted">Название должно быть уникальным.</small>
                             </div>
                             <input type="submit" class="btn btn-primary" value="Добавить">
