@@ -36,6 +36,9 @@
     <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button)
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
     </script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
