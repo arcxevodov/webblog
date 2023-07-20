@@ -27,12 +27,12 @@
                             @csrf
                             <div class="form-group">
                                 <label for="inputText">Имя</label>
-                                <input type="text" name="title" class="form-control" id="inputText" aria-describedby="textHelp" placeholder="Введите имя тега">
+                                <input type="text" name="title" class="form-control shadow-sm" id="inputText" aria-describedby="textHelp" placeholder="Введите имя тега">
                                 @error('title')
                                     <small id="textHelp" class="form-text text-danger">Это поле необходимо для заполнения.</small>
                                 @enderror
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Добавить">
+                            <input type="submit" class="btn btn-primary shadow-sm" value="Добавить">
                             <a href="{{ route('admin.tags.index') }}" class="btn btn-link">Отменить</a>
                         </form>
                     </div>
