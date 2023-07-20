@@ -27,7 +27,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="inputText">Название</label>
-                                <input type="text" name="name" class="form-control" id="inputText" aria-describedby="textHelp" placeholder="Введите название поста">
+                                <input type="text" name="name" class="form-control shadow-sm" id="inputText" aria-describedby="textHelp" placeholder="Введите название поста">
                                 @error('name')
                                 <small id="textHelp" class="form-text text-danger">Это поле необходимо для заполнения.</small>
                                 @enderror
@@ -37,9 +37,12 @@
                                 <textarea name="editordata" id="summernote" cols="30" rows="10"></textarea>
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Добавить">
+                                <input type="file" class="form-control shadow-sm" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                             </div>
-                            <a href="{{ route('admin.tags.index') }}" class="btn btn-link">Отменить</a>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary shadow-sm" value="Добавить">
+                                <a href="{{ route('admin.tags.index') }}" class="btn btn-link">Отменить</a>
+                            </div>
                         </form>
                     </div>
                 </div>
